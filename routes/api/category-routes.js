@@ -10,7 +10,7 @@ router.get('/', async (req, res) => {
     const categoryData = await Category.findAll({ //* find all the data for the Category model
       include: [{ model: Product }], //* include associated products 
     });
-    res.status(200).json(readerData); //* if good respond 200 
+    res.status(200).json(categoryData); //* if good respond 200 
   } catch (err) {
     res.status(500).json(err); //* if something wrong respond error 500 
   }
@@ -45,7 +45,6 @@ router.post('/', async (req, res) => {
   } catch (err) {
     res.status(400).json(err); //* error message 
   }
-
 });
 
 router.put('/:id', async (req, res) => {
