@@ -40,7 +40,7 @@ router.post('/', async (req, res) => {
   // create a new category
   try {
     //* create a new category using the post method and Category.create from user input 
-    const categoryData = await Category.create(req.body);
+    const categoryData = await Category.create(req.body)
     res.status(200).json(categoryData); //* all good 
   } catch (err) {
     res.status(400).json(err); //* error message 
